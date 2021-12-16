@@ -1,3 +1,13 @@
 body {
   font-family: Palatino;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  width: fit-content;
+  margin: 2rem;
+}

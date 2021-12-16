@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#new-item-form');
   form.addEventListener('submit', handleFormSubmit);
 
+  const deleteButton = document.querySelector('#delete-all');
+  deleteButton.addEventListener('click', handleDeleteAll);
 })
 
 const handleFormSubmit = function(event) {
   event.preventDefault();
-  console.log(event);
   const list = document.querySelector('ul');
   const listItem = document.createElement('li');
   const bookTitle = document.createElement('h2');
@@ -25,5 +26,12 @@ const handleFormSubmit = function(event) {
   list.appendChild(listItem);
 
   event.target.reset();
+};
 
-}
+const handleDeleteAll = function(){
+  const allListItems = document.querySelectorAll('li');
+  const list = document.querySelector('ul');
+  allListItems.forEach((listItem) => {
+    list.removeChild(listItem);
+  });
+};
